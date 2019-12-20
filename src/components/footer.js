@@ -11,11 +11,15 @@ const EnlaceHome = styled(Link)`
     text-decoration: none;
 `;
 
-const Header = () => {
+const Footer = () => {
+
+    const year = new Date().getFullYear();
     return ( 
-        <header
+        <>
+        <footer
             css={css`
                 background-color: rgba(44,62,80);
+                margin-top: 5rem;
                 padding: 1rem;
             `}
         >
@@ -31,15 +35,26 @@ const Header = () => {
                     }
                 `}
             >
+                <Navegacion />
+
                 <EnlaceHome
                     to='/'
                 ><h1>Hotel Gatsby</h1> </EnlaceHome>
-                
-
-                <Navegacion />
             </div>
-        </header>
+        </footer>
+        <p
+            css={css`
+                text-align: center;
+                color: #fff;
+                background-color: rgb(33,44,55);
+                margin: 0;
+                padding: 1rem;
+            `}
+        >
+            Hotel Gatsby. Todos los derechos Reservados {year} &copy;
+        </p>
+        </>
      );
 }
  
-export default Header;
+export default Footer;
